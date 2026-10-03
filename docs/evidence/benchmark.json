@@ -1,0 +1,28 @@
+{
+  "environment": {
+    "node": "v24.19.0",
+    "platform": "linux",
+    "arch": "x64"
+  },
+  "input": {
+    "rows": 32,
+    "columns": 32,
+    "shafts": 32
+  },
+  "repetitions": 50,
+  "compileMs": {
+    "min": 0.280233999999993,
+    "median": 0.5622400000000027,
+    "max": 2.7576589999999968
+  },
+  "exportBundleMs": 11.556582000000006,
+  "checkedCells": 1024,
+  "artifactBytes": {
+    "draft-weft.wif": 991,
+    "draft-weft.svg": 924938,
+    "draft-weft-threading.txt": 1010,
+    "draft-weft-report.json": 145346,
+    "draft-weft-project.json": 13783
+  },
+  "claim": "Single local synthetic measurement, not a performance guarantee"
+}

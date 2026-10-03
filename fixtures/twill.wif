@@ -1,0 +1,62 @@
+[WIF]
+Version=1.1
+Date=April 20, 1997
+Developers=DraftWeft contributors
+Source Program=DraftWeft
+Source Version=0.1.0
+
+[CONTENTS]
+TEXT=true
+COLOR PALETTE=true
+COLOR TABLE=true
+WEAVING=true
+WARP=true
+WEFT=true
+THREADING=true
+LIFTPLAN=true
+
+[TEXT]
+Title=Two-over-two twill
+
+[COLOR PALETTE]
+Entries=2
+Range=0,255
+
+[COLOR TABLE]
+1=31,71,73
+2=237,215,171
+
+[WEAVING]
+Shafts=4
+Treadles=0
+Rising Shed=true
+
+[WARP]
+Threads=8
+Color=1
+Units=Centimeters
+
+[WEFT]
+Threads=8
+Color=2
+Units=Centimeters
+
+[THREADING]
+1=1
+2=2
+3=3
+4=4
+5=1
+6=2
+7=3
+8=4
+
+[LIFTPLAN]
+1=1,2
+2=2,3
+3=3,4
+4=1,4
+5=1,2
+6=2,3
+7=3,4
+8=1,4

@@ -1,0 +1,7 @@
+node_modules/
+dist/
+tests/browser/artifacts/
+tests/interop/artifacts/
+__pycache__/
+*.pyc
+.DS_Store

@@ -1,0 +1,31 @@
+{
+  "schema": "draft-weft/v1",
+  "title": "Plain weave",
+  "shaftCap": 4,
+  "motif": [
+    [
+      true,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      true
+    ],
+    [
+      true,
+      false,
+      true,
+      false
+    ],
+    [
+      false,
+      true,
+      false,
+      true
+    ]
+  ]
+}

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; worker-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="DraftWeft: a small, transparent weaving-draft compiler for learning how binary motifs become direct liftplans.">
+  <title>DraftWeft · motif to draft</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">編集へ移動</a>
+  <header class="topbar">
+    <a href="#main" class="brand" aria-label="DraftWeft"><span class="mark" aria-hidden="true">▦</span> DraftWeft</a>
+    <div class="top-tools"><span class="local" data-i18n="local">端末内で処理 · 保存は手動</span><label class="language-label"><span class="sr-only" data-i18n="language">言語</span><select id="language"><option value="ja">日本語</option><option value="en">English</option></select></label></div>
+  </header>
+  <main id="main" tabindex="-1">
+    <section class="hero">
+      <p class="eyebrow" data-i18n="eyebrow">A SMALL WEAVING LAB</p>
+      <h1 data-i18n="headline">模様から、仕組みまで。</h1>
+      <p class="intro" data-i18n="intro">二値の模様を描く。同じ動きの経糸をまとめる。綜絖とリフトプランへの変換を、1マスずつ確かめる。</p>
+      <div class="model-pill" data-i18n="model">上口開口 · 経糸1本につき綜絖1枚 · 直接リフトプラン</div>
+    </section>
+    <div class="workspace">
+      <section class="panel editor-panel" aria-labelledby="editor-heading">
+        <div class="section-heading"><span class="step">01</span><div><p class="eyebrow" data-i18n="draw">DRAW</p><h2 id="editor-heading" data-i18n="editor">繰り返しの原図</h2></div><span id="dimensions" class="chip"></span></div>
+        <div class="presets" aria-label="Examples"><button id="example-plain" data-i18n="plain">平織</button><button id="example-twill" data-i18n="twill">2/2 綾織</button><button id="example-boundary" data-i18n="boundary">境界の例</button></div>
+        <p id="orientation" class="muted" data-i18n="orientation">経糸1は左、緯糸1は上。濃色 = 経糸が上。クリック / Spaceで切り替え、矢印キーで移動。</p>
+        <div class="grid-scroll" tabindex="-1"><div id="motif-grid" role="grid" aria-describedby="orientation"></div></div>
+        <div class="legend"><span><i class="swatch warp"></i><span data-i18n="warpUp">経糸が上</span></span><span><i class="swatch weft"></i><span data-i18n="weftUp">緯糸が上</span></span></div>
+        <div class="resize-row"><label><span data-i18n="warpEnds">経糸の本数</span><input id="width" type="number" min="1" max="32" value="8" inputmode="numeric"></label><label><span data-i18n="weftPicks">緯糸の本数</span><input id="height" type="number" min="1" max="32" value="8" inputmode="numeric"></label><button id="resize" data-i18n="resize">サイズを適用</button></div>
+        <p class="small muted" data-i18n="resizeHelp">1〜32本ずつ。サイズ変更は左上を維持し、追加マスを緯糸が上で埋めます。縮小すると範囲外は消えます。</p>
+        <div class="controls"><label class="title-field"><span data-i18n="title">作品名</span><input id="title" maxlength="160" value="Two-over-two twill" autocomplete="off"></label><label class="cap-field"><span data-i18n="shaftCap">綜絖の上限</span><input id="shaft-cap" type="number" min="1" max="32" value="4" inputmode="numeric"></label></div>
+        <div class="action-row"><button id="compile" class="primary" data-i18n="compile">仕組みに変換する</button><button id="cancel" hidden data-i18n="cancel">中止</button><button id="undo" disabled data-i18n="undo">1つ戻す</button></div>
+        <p id="status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="panel result-panel" aria-labelledby="result-heading">
+        <div class="section-heading"><span class="step">02</span><div><p class="eyebrow" data-i18n="understand">UNDERSTAND</p><h2 id="result-heading" data-i18n="result">なぜ、この綜絖数？</h2></div></div>
+        <div id="empty-result" class="empty-result"><span aria-hidden="true">↳</span><p data-i18n="emptyResult">変換すると、経糸のグループと最少綜絖数の根拠がここに表示されます。</p></div>
+        <div id="result" hidden>
+          <div id="result-summary" class="result-summary"></div>
+          <div id="cap-failure" class="notice danger" hidden></div>
+          <p class="muted" data-i18n="proofIntro">全ての緯糸位置で同じ動きをする列だけが、同じ綜絖を使えます。異なる列には必ず違いのある行があり、同じ綜絖では再現できません。</p>
+          <div id="groups" class="groups"></div>
+          <details><summary data-i18n="witnessTitle">綜絖を分ける根拠を見る</summary><div id="witnesses" class="witnesses"></div></details>
+          <details open><summary data-i18n="threadingTitle">番号付きの通し順とリフトプラン</summary><div id="threading" class="numbered"></div><div id="liftplan" class="numbered"></div></details>
+          <p class="small muted" data-i18n="minimumLimit">最少という結論は、この固定モデル内だけです。踏み木・タイアップや一般の織機制約の最適化ではありません。</p>
+        </div>
+      </section>
+    </div>
+    <section class="panel preview-panel" id="analysis" hidden aria-labelledby="preview-heading">
+      <div class="section-heading"><span class="step">03</span><div><p class="eyebrow" data-i18n="inspect">INSPECT THE EDGES</p><h2 id="preview-heading" data-i18n="preview">繰り返しと浮き</h2></div></div>
+      <div class="preview-layout"><div><div id="repeat-preview" class="repeat-preview"></div><p class="small muted" data-i18n="repeatHelp">3 × 3の模式図。オレンジ線は繰り返しの境界です。糸の太さや布の寸法は表しません。</p></div><div><div id="float-summary"></div><p class="small muted" data-i18n="floatHelp">有限：原図の端で切る連続数。周期：端をつないだ連続数。全て同じ値の列・行は、繰り返すと無限です。表と裏を別に数えます。</p><div id="degenerate" class="notice" hidden></div></div></div>
+    </section>
+    <section class="panel export-panel" aria-labelledby="export-heading">
+      <div class="section-heading"><span class="step">04</span><div><p class="eyebrow" data-i18n="takeAway">TAKE IT WITH YOU</p><h2 id="export-heading" data-i18n="export">検証して書き出す</h2></div></div>
+      <p data-i18n="exportHelp">全マスの再構成を確認し、WIFは書き出し文字列を別の読み取り処理で検証します。受け取り側での向きの一致は未検証です。</p>
+      <p id="wif-compat" class="notice danger" hidden></p>
+      <div class="downloads"><button id="download-wif" disabled>WIF</button><button id="download-svg" disabled data-i18n="svg">印刷用 SVG</button><button id="download-threading" disabled data-i18n="text">通し順 TXT</button><button id="download-report" disabled data-i18n="report">検証 JSON</button><button id="save-project" data-i18n="save">作品を保存</button></div>
+      <p class="small muted" data-i18n="wifLimit">WIFは小さな直接リフトプラン用プロファイルです。一般的なWIFの読み込み・完全準拠をうたうものではありません。WIF内の非ASCII作品名は「?」になります。</p>
+      <details class="import"><summary data-i18n="loadTitle">保存した作品を開く</summary><p class="small muted" data-i18n="loadHelp">DraftWeft JSONのみ、64 KiBまで。開くと現在の編集を置き換えます。必要なら先に保存してください。</p><label for="open-file" class="sr-only" data-i18n="openFile">作品ファイル</label><input id="open-file" type="file" accept=".json,application/json"><label for="project-json" data-i18n="paste">または作品JSONを貼り付け</label><textarea id="project-json" rows="5" spellcheck="false"></textarea><button id="load-json" data-i18n="load">JSONを適用</button></details>
+    </section>
+    <aside class="scope"><h2 data-i18n="scopeTitle">模様の仕組みを学ぶための道具</h2><p data-i18n="scopeText">布の品質・安全性・織りやすさの判定はしません。踏み木、タイアップ、下口開口、画像取り込み、糸の物理、実寸設計、織機制御は対象外です。実用前には織りの専門知識を持つ人と内容を確認してください。</p><p data-i18n="positioning">ブラウザーでのWIF編集や原図からの逆変換は、Bowerなど既存製品にもあります。DraftWeftの狙いは、小さな固定モデルを透明な根拠付きで学べることです。需要は未検証です。</p><p class="source-links"><a href="https://asunder.co/app/bower" target="_blank" rel="noopener noreferrer">Bower</a><a href="https://asunder.co/app/bower/articles/wif-file-specification" target="_blank" rel="noopener noreferrer" data-i18n="wifReference">WIF注釈付き資料</a><a href="https://www.weavepoint.com/wpoman/WeavePoint%208%20Manual.pdf" target="_blank" rel="noopener noreferrer">WeavePoint manual</a><a href="https://www.nationalarchives.gov.uk/PRONOM/fmt/2072" target="_blank" rel="noopener noreferrer">PRONOM fmt/2072</a></p></aside>
+    <footer><span>DraftWeft · 0.1.0</span><span data-i18n="privacy">入力の送信・自動保存・解析用通信なし。タブを閉じると未保存の編集は失われます。</span></footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "schema": "draft-weft/v1",
+  "title": "Repeat boundary study",
+  "shaftCap": 4,
+  "motif": [
+    [
+      true,
+      true,
+      false,
+      true
+    ],
+    [
+      true,
+      true,
+      false,
+      true
+    ],
+    [
+      true,
+      true,
+      false,
+      true
+    ],
+    [
+      true,
+      true,
+      false,
+      true
+    ]
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "parser": "PyWeaving",
+  "version": "0.0.7",
+  "unmodifiedParser": true,
+  "displayOrientationTested": false,
+  "fullConformanceClaim": false,
+  "results": [
+    {
+      "fixture": "plain",
+      "status": "matched",
+      "cells": 16
+    },
+    {
+      "fixture": "twill",
+      "status": "matched",
+      "cells": 64
+    },
+    {
+      "fixture": "boundary",
+      "status": "matched",
+      "cells": 16
+    },
+    {
+      "fixture": "empty-pick",
+      "status": "known-incompatibility-confirmed",
+      "reason": "PyWeaving 0.0.7 interprets LIFTPLAN 0 as the last shaft",
+      "expected": [
+        [
+          false,
+          false
+        ],
+        [
+          true,
+          false
+        ]
+      ],
+      "parsed": [
+        [
+          false,
+          true
+        ],
+        [
+          true,
+          false
+        ]
+      ]
+    }
+  ]
+}

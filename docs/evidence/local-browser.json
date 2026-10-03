@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-03",
+  "status": "blocked",
+  "stage": "browser-launch",
+  "testsRun": 0,
+  "chromiumSandbox": true,
+  "reason": "Chromium process-singleton socket() was denied with Operation not permitted; configuration paths were read-only",
+  "securityBypassAttempted": false,
+  "nextStep": "Run the authored browser suite in the sandbox-enabled CI job after authorized publication"
+}

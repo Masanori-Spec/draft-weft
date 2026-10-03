@@ -1,0 +1,19 @@
+{
+  "name": "draft-weft",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An educational binary-motif to direct-liftplan compiler with a constructive shaft proof",
+  "engines": { "node": ">=22" },
+  "bin": { "draft-weft": "src/cli.mjs" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "check": "node scripts/check-syntax.mjs && npm test && npm run build && node scripts/check-dist.mjs",
+    "test:browser": "node tests/browser/browser-test.mjs",
+    "test:interop": "python tests/interop/pyweaving_check.py",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": { "@playwright/test": "1.56.0" }
+}

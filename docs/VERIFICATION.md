@@ -1,0 +1,37 @@
+# Verification record
+
+Local candidate verified on 2026-10-03. These checks establish a small educational model, not physical suitability or universal file compatibility.
+
+## Passed locally
+
+- `npm run check`: syntax check, 31 Node test cases, static build, and all 10 built local module references
+- Exhaustive independent assignment search for every 3×4 Boolean motif (4,096)
+- Independently authored physical-model enumeration for every 3×3 motif (512), including exact minimum and WIF-byte reconstruction
+- Separately authored BigInt WIF parser on all 512 motifs, 32-shaft limits, and asymmetric orientation probes
+- 256 additional 2×4 WIF export/readback cases
+- Exhaustive cyclic run oracle through length 10, plus independent finite/cyclic oracle through length 9
+- Plain weave, 2/2 twill, duplicate columns, cap failure/preservation, constants, max dimensions, deterministic output, injection, malformed JSON, metadata, ID and palette checks
+- CLI success, distinct exit codes, cap failure creates no output, no-clobber and symlink-output refusal
+- Worker cancellation, newer-work replacement, stale-result rejection, timeout, and startup/processing failure tests
+- Unmodified PyWeaving 0.0.7: three fixtures match all cells; an empty-pick probe confirms a **known mismatch**, recorded separately rather than called a pass
+- Generated twill print SVG parsed and rendered with Inkscape; the PNG was visually inspected for labels, numbering, draft, liftplan, repeat, and caveats
+
+The six independently authored review tests and their report are retained in `tests/independent-review.test.mjs` and `docs/independent-review.md`.
+
+The synthetic 32×32 benchmark in `docs/evidence/benchmark.json` is a local measurement only. The browser's 5-second budget remains a fail-safe, not an inferred performance guarantee.
+
+## Blocked locally / not claimed as run
+
+Sandbox-enabled Chromium failed before a page could open: the environment denied its process-singleton socket, with read-only configuration-path warnings. Zero browser scenarios ran. No security bypass or `--no-sandbox` option was used. `docs/evidence/local-browser.json` retains a concise blocker record.
+
+The authored browser suite covers Japanese/English UI, skip link, keyboard motif editing, downloads and WIF reconstruction, cap-failure preservation, cyclic/unbounded warnings, malicious JSON/title input, oversized and stale file reads, injected download errors, resize/undo, cancel/stale work, max-size mobile overflow, request privacy, and budget expiry. These are **planned CI scenarios until a supported browser run succeeds**.
+
+Cross-application display orientation, commercial weaving-app import, actual looms, weaving samples, usability with real learners, and product demand are unverified.
+
+## Hosted CI status
+
+GitHub Actions is approval-pending and the workflow is omitted from this public source publication. The authored local browser test remains available in `tests/browser/browser-test.mjs`, but no hosted Node-matrix, timezone-matrix, external-parser, or browser CI run is claimed. Source publication and CI activation are separate steps.
+
+## Packaging
+
+`npm run package` rebuilds and checks the static output, then creates a deterministic source ZIP and SHA-256 file manifest in the adjacent `draft-weft-output` directory. The archive is tested and every manifest hash is checked. Node modules, browser installation, and runtime artifacts are excluded; curated evidence is included. No license or public deployment is selected by packaging.

@@ -4,6 +4,8 @@
 
 二値の模様から、通し順と直接リフトプランへ。同じ動きの経糸をまとめ、最少綜絖数の根拠と全マスの一致を表示する学習用ツールです。
 
+![DraftWeft Japanese desktop interface](docs/evidence/hosted-browser/desktop-ja.png)
+
 ## Try it locally
 
 Requires Node.js 22+ (and Python 3 for XML tests / packaging). No runtime packages, accounts, telemetry, backend, or user-input uploads.
@@ -80,7 +82,7 @@ npm run test:browser
 npm run package
 ```
 
-Local aggregate: 32 passing tests, including six independently authored review tests. Local Chromium launch is blocked by this workspace's socket/security restrictions; **no UI scenarios ran locally**, and no sandbox bypass was used. GitHub Actions defines Node 22/24 × UTC/Asia-Tokyo checks, external-parser evidence, and sandbox-enabled Chromium scenarios. A workflow definition is not a passing result: see the [per-commit Actions results](https://github.com/Masanori-Spec/draft-weft/actions) and the verification record for completed hosted checks.
+Local aggregate: 32 passing tests, including six independently authored review tests. Local Chromium launch is blocked by this workspace's socket/security restrictions; **no UI scenarios ran locally**, and no sandbox bypass was used. Hosted verification on 2026-10-04 passed all four Node 22/24 × UTC/Asia-Tokyo jobs (32 tests each), external-parser checks, and all 12 sandbox-enabled Chromium scenarios. Desktop English/Japanese and 390-pixel mobile screenshots were visually inspected. [Recorded run](https://github.com/Masanori-Spec/draft-weft/actions/runs/37168488595) · [Verification record](docs/VERIFICATION.md) · [Visual review](docs/VISUAL_REVIEW.md). Check [Actions](https://github.com/Masanori-Spec/draft-weft/actions) for later commits.
 
 ## Positioning and scope
 

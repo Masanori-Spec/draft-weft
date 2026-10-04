@@ -1,0 +1,43 @@
+{
+  "repository": "https://github.com/Masanori-Spec/draft-weft",
+  "verifiedFunctionalCommit": "13bdd570e870155594fce0daa42ec54cb31c4a0c",
+  "runUrl": "https://github.com/Masanori-Spec/draft-weft/actions/runs/37168488595",
+  "runId": 37168488595,
+  "conclusion": "success",
+  "nodeVersions": [
+    22,
+    24
+  ],
+  "timezones": [
+    "UTC",
+    "Asia/Tokyo"
+  ],
+  "nodeTestsPerMatrixJob": 32,
+  "browserScenarios": 12,
+  "chromiumSandbox": true,
+  "screenshotsVisuallyInspected": [
+    "desktop.png",
+    "desktop-ja.png",
+    "mobile.png",
+    "mobile-max.png"
+  ],
+  "interoperability": {
+    "parser": "PyWeaving 0.0.7",
+    "ordinaryFixtures": "3 matched",
+    "emptyPick": "known incompatibility confirmed"
+  },
+  "artifacts": [
+    {
+      "id": 11290132275,
+      "name": "draft-weft-browser-evidence",
+      "sizeBytes": 1162778,
+      "sha256": "3064e62b1642c3cb9bf842849d6afa0e7e1a6b8d6a8a913a7626fb905c32b0a5"
+    },
+    {
+      "id": 11289917570,
+      "name": "draft-weft-interoperability",
+      "sizeBytes": 446,
+      "sha256": "51c0de18fd1a4a340ffc3518f94967bf706a9a2be66b3c1cee419447b0fdf3fa"
+    }
+  ]
+}

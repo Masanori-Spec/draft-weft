@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "sandbox": true,
+  "results": [
+    {
+      "name": "Japanese and English UI; keyboard skip link and roving motif editing",
+      "status": "passed"
+    },
+    {
+      "name": "Twill proof, every-cell match, WIF readback and downloads",
+      "status": "passed"
+    },
+    {
+      "name": "Cap failure preserves motif and disables draft export",
+      "status": "passed"
+    },
+    {
+      "name": "Wraparound and unbounded floats warn about non-interlacing",
+      "status": "passed"
+    },
+    {
+      "name": "Safe JSON errors, injection rejection, successful save/reload",
+      "status": "passed"
+    },
+    {
+      "name": "Oversized file and stale file reads never replace newer edits",
+      "status": "passed"
+    },
+    {
+      "name": "Download creation errors remain visible",
+      "status": "passed"
+    },
+    {
+      "name": "Resize validates bounds; undo restores cropped cells",
+      "status": "passed"
+    },
+    {
+      "name": "Cancellation and edits invalidate a delayed compile",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile layout, 32×32 internal scrolling and no page overflow",
+      "status": "passed"
+    },
+    {
+      "name": "No external runtime requests or browser exceptions",
+      "status": "passed"
+    },
+    {
+      "name": "An unresponsive worker is stopped at the budget",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "requests": [
+    "http://127.0.0.1:4173/",
+    "http://127.0.0.1:4173/styles.css",
+    "http://127.0.0.1:4173/app.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/work-session.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs",
+    "http://127.0.0.1:4173/worker.mjs",
+    "http://127.0.0.1:4173/src/compiler.mjs",
+    "http://127.0.0.1:4173/src/export.mjs",
+    "http://127.0.0.1:4173/src/project.mjs",
+    "http://127.0.0.1:4173/src/floats.mjs",
+    "http://127.0.0.1:4173/src/wif-readback.mjs"
+  ]
+}

@@ -9,45 +9,46 @@ npm warn Unknown env config "http-proxy". This will stop working in the next maj
 > draft-weft@0.1.0 test
 > node --test tests/*.test.mjs
 
-✔ CLI examples, check, export, overwrite refusal, cap failure and bad input (586.846807ms)
-✔ plain weave uses two deterministic shaft IDs and reconstructs every cell (3.522687ms)
-✔ 2/2 twill needs four shafts; duplicates share shafts (1.619119ms)
-✔ shaft cap failure preserves motif and provides a constructive reason (1.315019ms)
-✔ empty and full picks and constant ends stay in the model with warnings (5.324001ms)
-✔ cyclic boundary true true false true has length three, finite two (0.263018ms)
-✔ cyclic floats agree with start-at-every-position oracle for every sequence through length 10 (19.409932ms)
-✔ exact minimum agrees with independent assignment enumeration for all 3×4 binary motifs (99.630177ms)
-✔ 32×32 and reproducible random motifs preserve IDs and all cells (146.647107ms)
-✔ strict validation rejects ragged, sparse, nonboolean, oversized and malformed projects (0.919521ms)
-✔ metadata blocks CRLF section injection, illegal XML chars and overlong titles (0.797175ms)
-✔ project serialization makes a defensive copy and deterministic schema (0.286644ms)
-✔ reconstruction mismatch is rejected (0.237178ms)
-✔ unknown keys cannot inject terminal controls into errors (0.396189ms)
-✔ run helper rejects sparse and nonboolean sequences (0.240284ms)
-✔ WIF includes identity, CONTENTS, palette and direct-liftplan only (2.897682ms)
-✔ all 2×4 motifs roundtrip exported bytes independently, including zero lifts (19.650626ms)
-✔ tampered sections, counts, IDs, duplicate keys and wrong cells fail readback (0.924098ms)
-✔ all exports are deterministic and cap failure blocks draft artifacts (4.460916ms)
-✔ SVG is escaped valid XML; Unicode project titles are never executable (22.004946ms)
-✔ numbered print SVG and text include orientation and every end and pick (1.070018ms)
-✔ independent exhaustive physical models establish all 512 minima and WIF cells for 3x3 (88.811672ms)
-✔ maximum 32-shaft asymmetric profile preserves row/column order through independent WIF bits (1.96411ms)
-✔ all sequences through length 9 match independent finite/cyclic run oracle, both faces (8.423528ms)
-✔ title injection stays text; invalid XML characters are rejected before SVG generation (1.154416ms)
-✔ strict import guard refuses coercion, sparse/oversized matrices, unsafe fields and 64KiB overflow (0.823004ms)
-✔ CLI refuses overwrite and symlink destinations; invalid/cap-failed imports create no output (511.894733ms)
-✔ cancel terminates worker and ignores late result (1.229028ms)
-✔ newer compile replaces prior worker, stale messages cannot replace results (1.23653ms)
-✔ budget cancellation emits one error, ignores worker afterwards (0.281605ms)
-✔ worker startup, postMessage and processing errors stop work (0.299553ms)
-ℹ tests 31
+✔ CLI examples, check, export, overwrite refusal, cap failure and bad input (592.291023ms)
+✔ plain weave uses two deterministic shaft IDs and reconstructs every cell (2.875133ms)
+✔ 2/2 twill needs four shafts; duplicates share shafts (0.873158ms)
+✔ shaft cap failure preserves motif and provides a constructive reason (1.229587ms)
+✔ empty and full picks and constant ends stay in the model with warnings (0.544933ms)
+✔ cyclic boundary true true false true has length three, finite two (0.220964ms)
+✔ cyclic floats agree with start-at-every-position oracle for every sequence through length 10 (18.175795ms)
+✔ exact minimum agrees with independent assignment enumeration for all 3×4 binary motifs (107.427432ms)
+✔ 32×32 and reproducible random motifs preserve IDs and all cells (165.502005ms)
+✔ strict validation rejects ragged, sparse, nonboolean, oversized and malformed projects (0.930055ms)
+✔ metadata blocks CRLF section injection, illegal XML chars and overlong titles (0.668871ms)
+✔ project serialization makes a defensive copy and deterministic schema (0.315217ms)
+✔ reconstruction mismatch is rejected (0.131229ms)
+✔ unknown keys cannot inject terminal controls into errors (0.193903ms)
+✔ run helper rejects sparse and nonboolean sequences (0.222847ms)
+✔ WIF includes identity, CONTENTS, palette and direct-liftplan only (3.13132ms)
+✔ all 2×4 motifs roundtrip exported bytes independently, including zero lifts (21.746713ms)
+✔ tampered sections, counts, IDs, duplicate keys and wrong cells fail readback (1.332572ms)
+✔ all exports are deterministic and cap failure blocks draft artifacts (3.659447ms)
+✔ SVG is escaped valid XML; Unicode project titles are never executable (23.498224ms)
+✔ numbered print SVG and text include orientation and every end and pick (1.464552ms)
+✔ independent exhaustive physical models establish all 512 minima and WIF cells for 3x3 (108.637249ms)
+✔ maximum 32-shaft asymmetric profile preserves row/column order through independent WIF bits (2.834482ms)
+✔ all sequences through length 9 match independent finite/cyclic run oracle, both faces (13.48557ms)
+✔ title injection stays text; invalid XML characters are rejected before SVG generation (1.183308ms)
+✔ strict import guard refuses coercion, sparse/oversized matrices, unsafe fields and 64KiB overflow (0.928683ms)
+✔ CLI refuses overwrite and symlink destinations; invalid/cap-failed imports create no output (500.193691ms)
+✔ cancel terminates worker and ignores late result (0.932419ms)
+✔ newer compile replaces prior worker, stale messages cannot replace results (0.632495ms)
+✔ budget cancellation emits one error, ignores worker afterwards (0.271029ms)
+✔ worker startup, postMessage and processing errors stop work (0.220073ms)
+✔ default browser timers are called without a WorkSession receiver (10.832823ms)
+ℹ tests 32
 ℹ suites 0
-ℹ pass 31
+ℹ pass 32
 ℹ fail 0
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 713.722279
+ℹ duration_ms 722.960557
 npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
 
 > draft-weft@0.1.0 build

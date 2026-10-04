@@ -10,3 +10,26 @@ test('worker startup, postMessage and processing errors stop work',()=>{
  const r=rig();r.session.start({});r.workers[0].onerror();assert.equal(r.errors[0].code,'WORKER');assert.equal(r.timers.size,0);
  const x=rig();x.session.start({});const w=x.workers[0];w.onmessage({data:{id:w.msg.id,error:{code:'CAP'}}});assert.equal(x.errors[0].code,'CAP');
 });
+
+test('default browser timers are called without a WorkSession receiver', async () => {
+ const { readFile } = await import('node:fs/promises');
+ const { runInNewContext } = await import('node:vm');
+ const source = (await readFile(new URL('../src/work-session.mjs', import.meta.url), 'utf8')).replace('export class WorkSession', 'class WorkSession');
+ runInNewContext(`'use strict';
+ function setTimeout(callback, delay) {
+  if (this !== undefined && this !== globalThis) throw new TypeError('Illegal invocation');
+  globalThis.pending = callback; return 1;
+ }
+ function clearTimeout(id) {
+  if (this !== undefined && this !== globalThis) throw new TypeError('Illegal invocation');
+  globalThis.pending = null;
+ }
+ ${source}
+ const worker = { terminate() {}, postMessage(message) { this.message = message; } };
+ const session = new WorkSession({ createWorker: () => worker, onResult() {}, onError(error) { throw Error(error.message); } });
+ session.start({ title: 'browser timer probe' });
+ if (!worker.message || typeof pending !== 'function') throw Error('Work was not posted with an active timer');
+ session.cancel();
+ if (pending !== null) throw Error('Timer was not cleared');
+ `);
+});

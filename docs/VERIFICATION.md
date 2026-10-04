@@ -4,7 +4,7 @@ Local candidate verified on 2026-10-03. These checks establish a small education
 
 ## Passed locally
 
-- `npm run check`: syntax check, 31 Node test cases, static build, and all 10 built local module references
+- `npm run check`: syntax check, 32 Node test cases, static build, and all 10 built local module references
 - Exhaustive independent assignment search for every 3×4 Boolean motif (4,096)
 - Independently authored physical-model enumeration for every 3×3 motif (512), including exact minimum and WIF-byte reconstruction
 - Separately authored BigInt WIF parser on all 512 motifs, 32-shaft limits, and asymmetric orientation probes

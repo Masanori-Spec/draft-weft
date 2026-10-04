@@ -80,7 +80,7 @@ npm run test:browser
 npm run package
 ```
 
-Local aggregate: 31 passing tests, including six independently authored review tests. Local Chromium launch is blocked by this workspace's socket/security restrictions; **no UI scenarios ran locally**, and no sandbox bypass was used. GitHub Actions defines Node 22/24 × UTC/Asia-Tokyo checks, external-parser evidence, and sandbox-enabled Chromium scenarios. A workflow definition is not a passing result: see the [per-commit Actions results](https://github.com/Masanori-Spec/draft-weft/actions) and the verification record for completed hosted checks.
+Local aggregate: 32 passing tests, including six independently authored review tests. Local Chromium launch is blocked by this workspace's socket/security restrictions; **no UI scenarios ran locally**, and no sandbox bypass was used. GitHub Actions defines Node 22/24 × UTC/Asia-Tokyo checks, external-parser evidence, and sandbox-enabled Chromium scenarios. A workflow definition is not a passing result: see the [per-commit Actions results](https://github.com/Masanori-Spec/draft-weft/actions) and the verification record for completed hosted checks.
 
 ## Positioning and scope
 

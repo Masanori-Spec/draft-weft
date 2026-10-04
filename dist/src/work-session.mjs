@@ -1,6 +1,6 @@
 // Separates current input from in-flight work and makes stale messages harmless.
 export class WorkSession {
-  constructor({ createWorker, onResult, onError, budgetMs = 5000, timer = setTimeout, clearTimer = clearTimeout }) {
+  constructor({ createWorker, onResult, onError, budgetMs = 5000, timer = (callback, delay) => setTimeout(callback, delay), clearTimer = id => clearTimeout(id) }) {
     Object.assign(this, { createWorker, onResult, onError, budgetMs, timer, clearTimer });
     this.epoch = 0; this.worker = null; this.timeout = null;
   }

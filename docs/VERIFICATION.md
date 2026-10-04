@@ -30,7 +30,9 @@ Cross-application display orientation, commercial weaving-app import, actual loo
 
 ## Hosted CI status
 
-GitHub Actions is approval-pending and the workflow is omitted from this public source publication. The authored local browser test remains available in `tests/browser/browser-test.mjs`, but no hosted Node-matrix, timezone-matrix, external-parser, or browser CI run is claimed. Source publication and CI activation are separate steps.
+`.github/workflows/check.yml` defines Node 22/24 × UTC/Asia-Tokyo checks, an external-parser evidence job, and a sandbox-enabled Chromium job. Jobs have read-only contents permission, checkout credentials are not persisted, and each job has a time limit.
+
+The browser job uses Ubuntu 22.04 as a temporary compatibility baseline; its runner retires on 2027-04-17 and must be migrated before then with a successful sandbox run. The browser test is `tests/browser/browser-test.mjs`; desktop and mobile screenshots and scenario results are retained as workflow artifacts. Check [Actions](https://github.com/Masanori-Spec/draft-weft/actions) for the exact commit under review. The definition alone does not establish that any hosted scenario passed.
 
 ## Packaging
 
